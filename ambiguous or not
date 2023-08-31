@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+// Productions for the grammar
+char *productions[] = {
+    "E->E+T",
+    "E->T",
+    "T->T*F",
+    "T->F",
+    "F->(E)",
+    "F->id"
+};
+
+// Number of productions
+int numProductions = 6;
+
+bool isAmbiguous(char *input) {
+    // Logic to check ambiguity
+    // In this example, we'll consider the input as ambiguous if there's more than one parse tree.
+    // A simple approach would be to use a recursive descent parser and count the number of parse trees.
+    // However, this is not a general solution for all grammars.
+
+    // TODO: Implement the logic to determine ambiguity
+
+    return true; // Placeholder result (assume ambiguity for the example)
+}
+
+int main() {
+    char input[100];
+    printf("Enter an input string: ");
+    scanf("%s", input);
+
+    if (isAmbiguous(input)) {
+        printf("The grammar is ambiguous.\n");
+    } else {
+        printf("The grammar is not ambiguous.\n");
+    }
+
+    return 0;
+}
